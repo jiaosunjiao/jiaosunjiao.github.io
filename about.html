@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carolyn and Sarah's Tonkinese - About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .handwritten {
+            font-family: 'Courgette', cursive;
+            font-size: 1.5rem;
+            color: #3a3a3a;
+        }
+
+        .feather-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.8); /* White background with opacity */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-image {
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .about-content {
+            max-width: 50%;
+        }
+
+        .about-content h2 {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container my-5 about-container">
+        <div class="about-image">
+            <img src="images/grandmas-kittens.png" alt="Grandmas with Kittens" class="img-fluid">
+        </div>
+        <div class="about-content">
+            <h2 class="handwritten"><img src="images/feather-pen.png" class="feather-icon" alt="Feather Pen">About Us</h2>
+            <p class="handwritten">We are a small cattery in Tucson, Arizona. We have been breeding and showing cats for 15 years. We are both retired and our cats and kittens live with us underfoot. Our priorities are health, temperament and conformation.</p>
+            <p class="handwritten">We began showing cats in 2009. We have had Persians and American Shorthairs win Lifetime Achievement, International and Regional awards.</p>
+            <p class="handwritten">We fell in love with the Tonkinese breed at a cat show and have now put our focus and emphasis on this lovely breed.</p>
+            <p class="handwritten">Once you own one of our kittens, we are here for you to help and answer any and all questions. You become part of our Tonkinese family.</p>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
