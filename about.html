@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Carolyn and Sarah's Tonkinese</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600;700&family=Courgette:wght@400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .about-hero {
@@ -45,40 +45,112 @@
             margin: 0 auto;
         }
 
+
+
         .story-section {
-            background: var(--white);
+            background: linear-gradient(135deg, #F8F6F3 0%, #F0EDE8 100%);
             padding: var(--spacing-3xl) 0;
+            position: relative;
         }
 
+
+
         .story-container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .story-content {
-            background: var(--gray-50);
+            background: var(--white);
             padding: var(--spacing-3xl);
             border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             border: 1px solid var(--gray-200);
+            position: relative;
+        }
+
+        .story-content::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #D4C4A8, #E8DCC8, #F5F1ED);
+            border-radius: var(--radius-xl);
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .story-image {
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transition: transform var(--transition-normal);
+        }
+
+        .story-image:hover {
+            transform: scale(1.02);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-text-content {
+            position: relative;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+            position: relative;
         }
 
         .story-title {
             color: var(--primary-color);
             font-size: 2.5rem;
-            margin-bottom: var(--spacing-xl);
-            text-align: center;
+            margin-bottom: var(--spacing-md);
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .feather-pen {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 60px;
+            height: auto;
+            opacity: 0.8;
+            transform: rotate(-15deg);
         }
 
         .story-text {
-            font-size: 1.1rem;
+            font-family: 'Courgette', cursive;
+            font-size: 1.2rem;
             line-height: 1.8;
-            color: var(--gray-700);
+            color: var(--gray-800);
             margin-bottom: var(--spacing-xl);
+            text-align: left;
+            position: relative;
         }
 
-        .story-text:last-child {
-            margin-bottom: 0;
+        .story-text p {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .story-text p:first-child::first-letter {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
         }
 
         .signature {
@@ -86,10 +158,22 @@
             margin-top: var(--spacing-2xl);
             padding-top: var(--spacing-xl);
             border-top: 2px solid var(--gray-200);
+            position: relative;
+        }
+
+        .signature::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
         }
 
         .signature-names {
-            font-size: 1.5rem;
+            font-family: 'Courgette', cursive;
+            font-size: 1.8rem;
             color: var(--primary-color);
             font-weight: 600;
             margin-bottom: var(--spacing-sm);
@@ -98,6 +182,7 @@
         .signature-title {
             color: var(--gray-600);
             font-style: italic;
+            font-size: 1rem;
         }
 
         .credentials-section {
@@ -128,43 +213,7 @@
             margin: 0 auto;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, #E8DCC8 0%, #D4C4A8 100%);
-            color: var(--gray-800);
-            padding: var(--spacing-3xl) 0;
-            text-align: center;
-        }
 
-        .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-lg);
-            font-weight: 600;
-        }
-
-        .cta-text {
-            font-size: 1.2rem;
-            margin-bottom: var(--spacing-2xl);
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: var(--spacing-lg) var(--spacing-2xl);
-            border-radius: var(--radius-lg);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-            background: var(--primary-dark);
-        }
 
         @media (max-width: 768px) {
             .about-hero-title {
@@ -176,12 +225,28 @@
                 margin: 0 var(--spacing-md);
             }
             
+            .story-content > div {
+                flex-direction: column !important;
+                gap: 2rem !important;
+            }
+            
+            .story-image {
+                flex: none !important;
+                width: 100% !important;
+            }
+            
             .story-title {
                 font-size: 2rem;
             }
             
             .story-text {
-                font-size: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .feather-pen {
+                width: 40px;
+                top: -10px;
+                right: 10px;
             }
             
             .credentials-grid {
@@ -198,44 +263,47 @@
     <div id="header"></div>
     
     <main class="flex-grow-1">
-        <!-- Hero Section -->
-        <section class="about-hero">
-            <div class="container">
-                <div class="about-hero-content fade-in">
-                    <h1 class="about-hero-title">About Our Cattery</h1>
-                    <p class="about-hero-subtitle">A personal message from Carolyn & Sarah</p>
-                </div>
-            </div>
-        </section>
+
+
 
         <!-- Our Story Section -->
         <section class="story-section">
             <div class="container">
                 <div class="story-container">
-                    <div class="story-content slide-up">
-                        <h2 class="story-title">Our Story</h2>
-                        
-                        <div class="story-text">
-                            <p>We are a small cattery in Tucson, Arizona. We have been breeding and showing cats for 15 years. We are both retired and our cats and kittens live with us underfoot. Our priorities are health, temperament and conformation.</p>
-                            
-                            <p>We began showing cats in 2009. We have had Persians and American Shorthairs win Lifetime Achievement, International and Regional awards.</p>
-                            
-                            <p>We fell in love with the Tonkinese breed at a cat show and have now put our focus and emphasis on this lovely breed.</p>
-                            
-                            <p>Once you own one of our kittens, we are here for you to help and answer any and all questions. You become part of our Tonkinese family.</p>
-                        </div>
-                        
-                        <div class="signature">
-                            <div class="signature-names">Carolyn & Sarah</div>
-                            <div class="signature-title">Carolyn & Sarah's Tonkinese</div>
+                                        <div class="story-content slide-up">
+                        <div style="display: flex; gap: 3rem; align-items: flex-start;">
+                            <div class="story-image" style="flex: 0 0 45%;">
+                                <img src="images/grandmas-kittens.png" alt="Our Story">
+                            </div>
+                            <div class="story-text-content" style="flex: 1;">
+                                <div class="story-header">
+                                    <img src="images/feather-pen.png" alt="Feather Pen" class="feather-pen">
+                                    <h2 class="story-title">Our Story</h2>
+                                </div>
+                                
+                                <div class="story-text">
+                                    <p>We are a small cattery in Tucson, Arizona. We have been breeding and showing cats for 15 years. We are both retired and our cats and kittens live with us underfoot. Our priorities are health, temperament and conformation.</p>
+                                    
+                                    <p>We began showing cats in 2009. We have had Persians and American Shorthairs win Lifetime Achievement, International and Regional awards.</p>
+                                    
+                                    <p>We fell in love with the Tonkinese breed at a cat show and have now put our focus and emphasis on this lovely breed.</p>
+                                    
+                                    <p>Once you own one of our kittens, we are here for you to help and answer any and all questions. You become part of our Tonkinese family.</p>
+                                </div>
+                                
+                                <div class="signature">
+                                    <div class="signature-names">Carolyn & Sarah</div>
+                                    <div class="signature-title">Carolyn & Sarah's Tonkinese</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Credentials Link Section -->
-        <section class="credentials-section">
+        <!-- Credentials & Trust Section -->
+        <section class="credentials-section" style="background: var(--gray-50);">
             <div class="container">
                 <div class="credentials-container">
                     <div class="credentials-intro fade-in">
@@ -249,16 +317,7 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="fade-in">
-                    <h2 class="cta-title">Ready to Join Our Family?</h2>
-                    <p class="cta-text">Experience the love and care that goes into every one of our Tonkinese kittens.</p>
-                    <a href="gallery.html" class="cta-button">View Our Available Kittens</a>
-                </div>
-            </div>
-        </section>
+
     </main>
     
     <div id="footer"></div>
