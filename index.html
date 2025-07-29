@@ -5,80 +5,262 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carolyn and Sarah's Tonkinese - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .no-margin {
-            margin: 0 !important;
-            padding: 0 !important;
+        .hero-section {
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+            padding: var(--spacing-3xl) 0;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
         }
 
-        .container {
-            max-width: 1200px; /* Adjust max-width for better centering */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            height: 100%;
         }
-        
+
+        .slideshow-container {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            height: 100%;
+            min-height: 400px;
+        }
+
         .slideshow {
-            margin: 0; /* Center the slideshow */
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySlides.active {
+            display: block;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .slideshow:hover img {
+            transform: scale(1.05);
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: -25px;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            user-select: none;
+            background: rgba(0, 0, 0, 0.6);
+            text-decoration: none;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .numbertext {
+            color: var(--white);
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 0 0 8px 0;
+            z-index: 10;
+        }
+
+        .welcome-content {
+            padding: var(--spacing-2xl);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            height: fit-content;
+        }
+
+        .welcome-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.2;
+        }
+
+        .welcome-text {
+            color: var(--gray-700);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .welcome-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 600;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-2xl);
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-color);
+            padding: var(--spacing-lg) var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+            color: var(--primary-dark);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                gap: var(--spacing-2xl);
+            }
+            
+            .slideshow-container {
+                min-height: 350px;
+            }
+            
+            .welcome-title {
+                font-size: 2rem;
+            }
+            
+            .welcome-text {
+                font-size: 1rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
-<body class="d-flex flex-column min-vh-100 no-margin">
+<body>
     <div id="header"></div>
-
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Container for the image gallery -->
-                <div class="slideshow">
-                    <!-- Full-width images with number text -->
-                    <div class="mySlides">
-                        <div class="numbertext">1 / 4</div>
-                        <img src="images/chica.jpg" alt="Chica, Best Tonkinese of the Year">
+    
+    <main class="flex-grow-1">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="slideshow-container fade-in">
+                                <div class="slideshow">
+                                    <div class="mySlides active">
+                                        <div class="numbertext">1 / 4</div>
+                                        <img src="images/chica.jpg" alt="Chica, Best Tonkinese of the Year" class="cat-image">
+                                    </div>
+                                    <div class="mySlides">
+                                        <div class="numbertext">2 / 4</div>
+                                        <img src="images/jordan.jpg" alt="Jordan when she was young" class="cat-image">
+                                    </div>
+                                    <div class="mySlides">
+                                        <div class="numbertext">3 / 4</div>
+                                        <img src="images/lynk.jpg" alt="Lynk, our previous cat" class="cat-image">
+                                    </div>
+                                    <div class="mySlides">
+                                        <div class="numbertext">4 / 4</div>
+                                        <img src="images/kitten.jpg" alt="Our kitten grows in our arms" class="cat-image">
+                                    </div>
+                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="welcome-content slide-up">
+                                <h1 class="welcome-title">Welcome to Carolyn & Sarah's Tonkinese</h1>
+                                
+                                <div class="welcome-text">
+                                    <p>Your source for adorable Tonkinese. We are a small, closed two-people run cattery located in beautiful Arizona.</p>
+                                    
+                                    <p>At Carolyn and Sarah's Tonkinese, we treat our kittens as our children and they grow up in our living room, bedroom, and our arms.</p>
+                                    
+                                    <p>We are dedicated to breeding and raising healthy, happy kittens that make perfect companions. Our cattery is committed to ensuring the best care for our kittens and providing them with loving homes. All our cats and kitten litters are registered with The International Cat Association (TICA) or The Cat Fanciers Association (CFA).</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mySlides">
-                        <div class="numbertext">2 / 4</div>
-                        <img src="images/jordan.jpg" alt="Jordan when she was young">
-                    </div>
-                    <div class="mySlides">
-                        <div class="numbertext">3 / 4</div>
-                        <img src="images/lynk.jpg" alt="Lynk, our previous cat">
-                    </div>
-                    <div class="mySlides">
-                        <div class="numbertext">4 / 4</div>
-                        <img src="images/kitten.jpg" alt="Our kitten grows in our arms">
-                    </div>
-                    <!-- Next and previous buttons -->
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
             </div>
-            <div class="col-md-6 cattery-info">
-                <br>
-                <h2>Welcome to Carolyn & Sarah's Tonkinese</h2>
-                <br><br>
-                <p>Your source for adorable Tonkinese. We are a small, closed two-people run cattery located in beautiful Arizona. </p>
-                <p>At Carolyn and Sarah's Tonkinese, we treat our kittens as our children and they grow up in our living room, bedroom, and our arms. </p>
-                <p>We are dedicated to breeding and raising healthy, happy kittens that make perfect companions. Our cattery is committed to ensuring the best care for our kittens and providing them with loving homes. All our cats and kitten litters are registered with The International Cat Association (TICA) or The Cat Fanciers Associaton (CFA).</p>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="fade-in">
+                    <h2 class="cta-title">Ready to Meet Your New Family Member?</h2>
+                    <p class="cta-text">Experience the love and care that goes into every one of our Tonkinese kittens.</p>
+                    <a href="gallery.html" class="cta-button">View Our Available Kittens</a>
+                </div>
             </div>
-        </div>
-    </div>
-
+        </section>
+    </main>
+    
     <div id="footer"></div>
-
     <script src="js/script.js"></script>
+    <script src="js/data-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
 </body>
 </html>

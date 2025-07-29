@@ -3,85 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolyn and Sarah's Tonkinese - About</title>
+    <title>About Us - Carolyn and Sarah's Tonkinese</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Poppins', sans-serif;
+        .about-hero {
+            background: linear-gradient(135deg, #F5F1ED 0%, #E8DCC8 50%, #D4C4A8 100%);
+            color: var(--gray-800);
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+            position: relative;
         }
 
-        .handwritten {
-            font-family: 'Courgette', cursive;
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23D4C4A8" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-hero-title {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 600;
+        }
+
+        .about-hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .story-section {
+            background: var(--white);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-content {
+            background: var(--gray-50);
+            padding: var(--spacing-3xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+        }
+
+        .story-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .story-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: var(--spacing-2xl);
+            padding-top: var(--spacing-xl);
+            border-top: 2px solid var(--gray-200);
+        }
+
+        .signature-names {
             font-size: 1.5rem;
-            color: #3a3a3a;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
         }
 
-        .feather-icon {
+        .signature-title {
+            color: var(--gray-600);
+            font-style: italic;
+        }
+
+        .credentials-section {
+            background: var(--gray-50);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .credentials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .credentials-intro {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .credentials-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .credentials-subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #E8DCC8 0%, #D4C4A8 100%);
+            color: var(--gray-800);
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 600;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-2xl);
+            opacity: 0.9;
+        }
+
+        .cta-button {
             display: inline-block;
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: var(--spacing-lg) var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-lg);
         }
 
-        .about-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            background: rgba(255, 255, 255, 0.8); /* White background with opacity */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+            background: var(--primary-dark);
         }
 
-        .about-image {
-            max-width: 50%;
-            padding-right: 20px;
-        }
-
-        .about-content {
-            max-width: 50%;
-        }
-
-        .about-content h2 {
-            display: flex;
-            align-items: center;
+        @media (max-width: 768px) {
+            .about-hero-title {
+                font-size: 2rem;
+            }
+            
+            .story-content {
+                padding: var(--spacing-xl);
+                margin: 0 var(--spacing-md);
+            }
+            
+            .story-title {
+                font-size: 2rem;
+            }
+            
+            .story-text {
+                font-size: 1rem;
+            }
+            
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div id="header"></div>
+    
+    <main class="flex-grow-1">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero-content fade-in">
+                    <h1 class="about-hero-title">About Our Cattery</h1>
+                    <p class="about-hero-subtitle">A personal message from Carolyn & Sarah</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="container my-5 about-container">
-        <div class="about-image">
-            <img src="images/grandmas-kittens.png" alt="Grandmas with Kittens" class="img-fluid">
-        </div>
-        <div class="about-content">
-            <h2 class="handwritten"><img src="images/feather-pen.png" class="feather-icon" alt="Feather Pen">About Us</h2>
-            <p class="handwritten">We are a small cattery in Tucson, Arizona. We have been breeding and showing cats for 15 years. We are both retired and our cats and kittens live with us underfoot. Our priorities are health, temperament and conformation.</p>
-            <p class="handwritten">We began showing cats in 2009. We have had Persians and American Shorthairs win Lifetime Achievement, International and Regional awards.</p>
-            <p class="handwritten">We fell in love with the Tonkinese breed at a cat show and have now put our focus and emphasis on this lovely breed.</p>
-            <p class="handwritten">Once you own one of our kittens, we are here for you to help and answer any and all questions. You become part of our Tonkinese family.</p>
-        </div>
-    </div>
+        <!-- Our Story Section -->
+        <section class="story-section">
+            <div class="container">
+                <div class="story-container">
+                    <div class="story-content slide-up">
+                        <h2 class="story-title">Our Story</h2>
+                        
+                        <div class="story-text">
+                            <p>We are a small cattery in Tucson, Arizona. We have been breeding and showing cats for 15 years. We are both retired and our cats and kittens live with us underfoot. Our priorities are health, temperament and conformation.</p>
+                            
+                            <p>We began showing cats in 2009. We have had Persians and American Shorthairs win Lifetime Achievement, International and Regional awards.</p>
+                            
+                            <p>We fell in love with the Tonkinese breed at a cat show and have now put our focus and emphasis on this lovely breed.</p>
+                            
+                            <p>Once you own one of our kittens, we are here for you to help and answer any and all questions. You become part of our Tonkinese family.</p>
+                        </div>
+                        
+                        <div class="signature">
+                            <div class="signature-names">Carolyn & Sarah</div>
+                            <div class="signature-title">Carolyn & Sarah's Tonkinese</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Credentials Link Section -->
+        <section class="credentials-section">
+            <div class="container">
+                <div class="credentials-container">
+                    <div class="credentials-intro fade-in">
+                        <h2 class="credentials-title">Our Credentials & Trust</h2>
+                        <p class="credentials-subtitle">With over 15 years of experience and numerous awards, we're proud to share our credentials that demonstrate our commitment to excellence in breeding.</p>
+                        <div class="text-center mt-4">
+                            <a href="certificates.html" class="btn btn-primary btn-lg">View Our Official Certificates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="fade-in">
+                    <h2 class="cta-title">Ready to Join Our Family?</h2>
+                    <p class="cta-text">Experience the love and care that goes into every one of our Tonkinese kittens.</p>
+                    <a href="gallery.html" class="cta-button">View Our Available Kittens</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
     <div id="footer"></div>
-
+    <script src="js/script.js"></script>
+    <script src="js/data-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
+        function openCertificate(imageSrc, title) {
+            // Create modal to display certificate
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                cursor: pointer;
+            `;
+            
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = title;
+            img.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                border-radius: 8px;
+            `;
+            
+            const closeText = document.createElement('div');
+            closeText.textContent = 'Click anywhere to close';
+            closeText.style.cssText = `
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 14px;
+                background: rgba(0,0,0,0.7);
+                padding: 8px 12px;
+                border-radius: 4px;
+            `;
+            
+            modal.appendChild(img);
+            modal.appendChild(closeText);
+            document.body.appendChild(modal);
+            
+            modal.onclick = function() {
+                document.body.removeChild(modal);
+            };
+        }
     </script>
 </body>
 </html>
