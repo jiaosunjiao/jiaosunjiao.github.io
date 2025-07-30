@@ -1,0 +1,135 @@
+{
+  "homepage": {
+    "hero": {
+      "title": "Welcome to Carolyn & Sarah's Tonkinese",
+      "subtitle": "Your trusted source for healthy, happy Tonkinese kittens. We're a small, family-run cattery in beautiful Arizona, dedicated to breeding exceptional companions.",
+      "cta_text": "View Our Kittens",
+      "cta_link": "gallery.html"
+    },
+    "about_preview": {
+      "title": "About Our Cattery",
+      "content": [
+        "At Carolyn and Sarah's Tonkinese, we treat our kittens as our children and they grow up in our living room, bedroom, and our arms. We are dedicated to breeding and raising healthy, happy kittens that make perfect companions.",
+        "Our cattery is committed to ensuring the best care for our kittens and providing them with loving homes. All our cats and kitten litters are registered with The International Cat Association (TICA) or The World Cat Federation (WCF)."
+      ],
+      "cta_text": "Learn More About Us",
+      "cta_link": "about.html"
+    },
+    "stats": [
+      {
+        "number": "15+",
+        "label": "Years Experience"
+      },
+      {
+        "number": "100%",
+        "label": "TICA Registered"
+      },
+      {
+        "number": "24/7",
+        "label": "Care & Love"
+      },
+      {
+        "number": "∞",
+        "label": "Lifetime Support"
+      }
+    ]
+  },
+  "about": {
+    "hero": {
+      "title": "About Our Cattery",
+      "subtitle": "Discover the story behind our passion for breeding exceptional Tonkinese cats and creating loving families."
+    },
+    "story": {
+      "title": "Our Story",
+      "sections": [
+        {
+          "title": "A Family Passion",
+          "image": "images/grandmas-kittens.png",
+          "content": "We are a small cattery in Tucson, Arizona. We have been breeding and showing cats for 15 years. We are both retired and our cats and kittens live with us underfoot. Our priorities are health, temperament and conformation."
+        },
+        {
+          "title": "Our Journey",
+          "image": "images/kitten.jpg",
+          "content": "We began showing cats in 2009. We have had Persians and American Shorthairs win Lifetime Achievement, International and Regional awards. We fell in love with the Tonkinese breed at a cat show and have now put our focus and emphasis on this lovely breed."
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "year": "2009",
+        "title": "Started Our Cat Show Journey",
+        "description": "We began showing cats and discovered our passion for breeding exceptional felines."
+      },
+      {
+        "year": "2015+",
+        "title": "Award-Winning Success",
+        "description": "Our Persians and American Shorthairs won Lifetime Achievement, International and Regional awards."
+      },
+      {
+        "year": "Present",
+        "title": "Focus on Tonkinese",
+        "description": "We fell in love with the Tonkinese breed at a cat show and have now put our focus and emphasis on this lovely breed."
+      }
+    ],
+    "values": [
+      {
+        "icon": "❤️",
+        "title": "Health First",
+        "description": "We prioritize the health and well-being of all our cats and kittens above everything else."
+      },
+      {
+        "icon": "🏆",
+        "title": "Quality Breeding",
+        "description": "We focus on temperament and conformation to ensure the best possible companions."
+      },
+      {
+        "icon": "👨‍👩‍👧‍👦",
+        "title": "Family Care",
+        "description": "Our cats and kittens live with us underfoot, receiving constant love and attention."
+      }
+    ],
+    "commitment": {
+      "title": "Our Commitment to You",
+      "content": "Once you own one of our kittens, we are here for you to help and answer any and all questions. You become part of our Tonkinese family. We provide lifetime support and guidance to ensure your new companion thrives in your home.",
+      "cta_text": "Get in Touch",
+      "cta_link": "contact.html"
+    }
+  },
+  "faq": {
+    "questions": [
+      {
+        "question": "What is a Tonkinese cat?",
+        "answer": "Tonkinese cats are a medium-sized breed with a muscular build and a silky coat. They are known for their affectionate and social nature."
+      },
+      {
+        "question": "How do I adopt a Tonkinese kitten?",
+        "answer": "You can adopt a Tonkinese kitten by contacting our cattery through the contact form on our website. We will guide you through the adoption process."
+      },
+      {
+        "question": "What is the temperament of a Tonkinese cat?",
+        "answer": "Tonkinese cats are known for their friendly and playful nature. They enjoy interacting with their human companions and are often described as being dog-like in their loyalty and affection."
+      },
+      {
+        "question": "How do I care for a Tonkinese kitten?",
+        "answer": "Caring for a Tonkinese kitten involves regular feeding with high-quality cat food, ensuring they have plenty of playtime and social interaction, and regular veterinary check-ups to keep them healthy."
+      },
+      {
+        "question": "What certifications and credentials does your cattery have?",
+        "answer": "Our cattery is fully registered with The International Cat Association (TICA) and The World Cat Federation (WCF). We have over 15 years of breeding experience and maintain the highest standards for health and temperament. View our official certificates and credentials here to see our full range of certifications and awards."
+      }
+    ]
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch with us about our Tonkinese kittens"
+    },
+    "info": {
+      "title": "Get in Touch",
+      "content": [
+        "We'd love to hear from you! Whether you're interested in adopting a Tonkinese kitten or have questions about our cattery, please don't hesitate to reach out.",
+        "We typically respond within 24-48 hours."
+      ]
+    }
+  }
+} 

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Certificates - Carolyn and Sarah's Tonkinese</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .certificates-hero {
+            background: linear-gradient(135deg, #F5F1ED 0%, #E8DCC8 50%, #D4C4A8 100%);
+            color: var(--gray-800);
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .certificates-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23D4C4A8" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .certificates-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .certificates-hero-title {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 600;
+        }
+
+        .certificates-hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .credentials-section {
+            background: var(--white);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .credentials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .credentials-intro {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .credentials-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .credentials-subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .credential-card {
+            background: var(--gray-50);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+
+        .credential-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .credential-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .credential-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+
+        .credential-description {
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .certificates-section {
+            background: var(--gray-50);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .certificates-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .certificates-intro {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .certificates-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .certificates-subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-2xl);
+        }
+
+        .certificate-item {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            transition: all var(--transition-normal);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid var(--gray-200);
+            transition: transform var(--transition-slow);
+        }
+
+        .certificate-item:hover .certificate-image {
+            transform: scale(1.02);
+        }
+
+        .certificate-name {
+            color: var(--gray-800);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.1rem;
+        }
+
+        .certificate-description {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .certificates-hero-title {
+                font-size: 2rem;
+            }
+            
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificate-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    
+    <main class="flex-grow-1">
+
+        <!-- Certificates Gallery Section -->
+        <section class="certificates-section">
+            <div class="container">
+                <div class="certificates-container">
+                    <div class="certificates-intro fade-in">
+                        <h2 class="certificates-title">Our Official Certificates</h2>
+                        <p class="certificates-subtitle">Click on any certificate to view it in full size</p>
+                    </div>
+
+                    <div class="certificates-grid">
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3111.HEIC', 'TICA Registration Certificate')">
+                            <img src="certificates/IMG_3111.HEIC" alt="TICA Registration Certificate" class="certificate-image">
+                            <div class="certificate-name">TICA Registration Certificate</div>
+                            <div class="certificate-description">Official registration with The International Cat Association</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3112.HEIC', 'WCF Certification')">
+                            <img src="certificates/IMG_3112.HEIC" alt="WCF Certification" class="certificate-image">
+                            <div class="certificate-name">WCF Certification</div>
+                            <div class="certificate-description">World Cat Federation certification</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3113.HEIC', 'Best Tonkinese Award')">
+                            <img src="certificates/IMG_3113.HEIC" alt="Best Tonkinese Award" class="certificate-image">
+                            <div class="certificate-name">Best Tonkinese Award</div>
+                            <div class="certificate-description">Chica's TICA Best Tonkinese of the Year award</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3114.HEIC', 'Health Certificate')">
+                            <img src="certificates/IMG_3114.HEIC" alt="Health Certificate" class="certificate-image">
+                            <div class="certificate-name">Health Certificate</div>
+                            <div class="certificate-description">Veterinary health documentation</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3115.HEIC', 'Show Achievement Award')">
+                            <img src="certificates/IMG_3115.HEIC" alt="Show Achievement Award" class="certificate-image">
+                            <div class="certificate-name">Show Achievement Award</div>
+                            <div class="certificate-description">Lifetime achievement recognition</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3116.HEIC', 'Pedigree Documentation')">
+                            <img src="certificates/IMG_3116.HEIC" alt="Pedigree Documentation" class="certificate-image">
+                            <div class="certificate-name">Pedigree Documentation</div>
+                            <div class="certificate-description">Complete lineage records</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3117.HEIC', 'Breeding Certification')">
+                            <img src="certificates/IMG_3117.HEIC" alt="Breeding Certification" class="certificate-image">
+                            <div class="certificate-name">Breeding Certification</div>
+                            <div class="certificate-description">Professional breeding standards</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3118.HEIC', 'Regional Award')">
+                            <img src="certificates/IMG_3118.HEIC" alt="Regional Award" class="certificate-image">
+                            <div class="certificate-name">Regional Award</div>
+                            <div class="certificate-description">Regional show recognition</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3119.HEIC', 'International Recognition')">
+                            <img src="certificates/IMG_3119.HEIC" alt="International Recognition" class="certificate-image">
+                            <div class="certificate-name">International Recognition</div>
+                            <div class="certificate-description">International show achievements</div>
+                        </div>
+                        <div class="certificate-item" onclick="openCertificate('certificates/IMG_3120.HEIC', 'Quality Assurance')">
+                            <img src="certificates/IMG_3120.HEIC" alt="Quality Assurance" class="certificate-image">
+                            <div class="certificate-name">Quality Assurance</div>
+                            <div class="certificate-description">Quality breeding standards</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials Overview Section -->
+        <section class="credentials-section">
+            <div class="container">
+                <div class="credentials-container">
+                    <div class="credentials-intro fade-in">
+                        <h2 class="credentials-title">Our Credentials</h2>
+                        <p class="credentials-subtitle">With over 15 years of experience and numerous awards, we're proud to share our credentials that demonstrate our commitment to excellence in breeding.</p>
+                    </div>
+
+                    <div class="credentials-grid">
+                        <div class="credential-card slide-up">
+                            <div class="credential-icon">🏆</div>
+                            <h3 class="credential-title">TICA Registered</h3>
+                            <p class="credential-description">Fully registered with The International Cat Association, the world's largest genetic registry of pedigreed cats.</p>
+                        </div>
+                        <div class="credential-card slide-up">
+                            <div class="credential-icon">🌍</div>
+                            <h3 class="credential-title">WCF Certified</h3>
+                            <p class="credential-description">Certified by The World Cat Federation, ensuring international breeding standards and pedigree documentation.</p>
+                        </div>
+                        <div class="credential-card slide-up">
+                            <div class="credential-icon">⏰</div>
+                            <h3 class="credential-title">15+ Years Experience</h3>
+                            <p class="credential-description">Over a decade and a half of dedicated breeding experience, with expertise in multiple cat breeds.</p>
+                        </div>
+                        <div class="credential-card slide-up">
+                            <div class="credential-icon">🏅</div>
+                            <h3 class="credential-title">Award Winners</h3>
+                            <p class="credential-description">Our cats have won Lifetime Achievement, International and Regional awards in cat shows.</p>
+                        </div>
+                        <div class="credential-card slide-up">
+                            <div class="credential-icon">❤️</div>
+                            <h3 class="credential-title">Health Focused</h3>
+                            <p class="credential-description">Health and temperament are our top priorities, ensuring every kitten is healthy and well-socialized.</p>
+                        </div>
+                        <div class="credential-card slide-up">
+                            <div class="credential-icon">📋</div>
+                            <h3 class="credential-title">Complete Documentation</h3>
+                            <p class="credential-description">Full pedigree documentation and health records for all our cats and kittens.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    
+    <div id="footer"></div>
+    <script src="js/script.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openCertificate(imageSrc, title) {
+            // Create modal to display certificate
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                cursor: pointer;
+            `;
+            
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = title;
+            img.style.cssText = `
+                max-width: 95%;
+                max-height: 95%;
+                object-fit: contain;
+                border-radius: 8px;
+            `;
+            
+            const closeText = document.createElement('div');
+            closeText.textContent = 'Click anywhere to close';
+            closeText.style.cssText = `
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 14px;
+                background: rgba(0,0,0,0.7);
+                padding: 8px 12px;
+                border-radius: 4px;
+            `;
+            
+            modal.appendChild(img);
+            modal.appendChild(closeText);
+            document.body.appendChild(modal);
+            
+            modal.onclick = function() {
+                document.body.removeChild(modal);
+            };
+        }
+    </script>
+</body>
+</html> 

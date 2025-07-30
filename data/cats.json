@@ -1,0 +1,47 @@
+{
+  "featured_cats": [
+    {
+      "name": "Chica",
+      "image": "images/chica.jpg",
+      "description": "Our award-winning queen, named Best Tonkinese of the Year by TICA. She's the foundation of our breeding program.",
+      "awards": ["Best Tonkinese of the Year - TICA"],
+      "status": "active_queen"
+    },
+    {
+      "name": "Jordan",
+      "image": "images/jordan.jpg",
+      "description": "A gentle and loving mother who produces the most affectionate kittens with wonderful temperaments.",
+      "awards": [],
+      "status": "active_queen"
+    },
+    {
+      "name": "Our Kittens",
+      "image": "images/kitten.jpg",
+      "description": "Raised in our home with love and care, our kittens grow up socialized and ready for their forever families.",
+      "awards": [],
+      "status": "representative"
+    }
+  ],
+  "slideshow_images": [
+    {
+      "image": "images/chica.jpg",
+      "alt": "Chica, Best Tonkinese of the Year",
+      "description": "Chica, our award-winning queen"
+    },
+    {
+      "image": "images/jordan.jpg",
+      "alt": "Jordan when she was young",
+      "description": "Jordan, our gentle mother"
+    },
+    {
+      "image": "images/lynk.jpg",
+      "alt": "Lynk, our previous cat",
+      "description": "Lynk, our previous cat"
+    },
+    {
+      "image": "images/kitten.jpg",
+      "alt": "Our kitten grows in our arms",
+      "description": "Our kitten grows in our arms"
+    }
+  ]
+} 
