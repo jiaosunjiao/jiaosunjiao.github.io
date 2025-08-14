@@ -5,193 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carolyn and Sarah's Tonkinese - FAQ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .faq-header {
+            margin-bottom: 30px;
             text-align: center;
-            margin-bottom: var(--spacing-3xl);
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: var(--spacing-lg);
         }
-
-        .faq-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 2px;
-        }
-
-        .faq-item {
-            margin-bottom: var(--spacing-md);
-        }
-
         .faq-question {
             cursor: pointer;
-            padding: var(--spacing-lg);
-            border: 2px solid var(--gray-200);
-            border-radius: var(--radius-lg);
-            background: var(--white);
-            font-weight: 600;
-            color: var(--gray-800);
-            transition: all var(--transition-fast);
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+            transition: background-color 0.3s ease;
         }
-
         .faq-question:hover {
-            border-color: var(--primary-color);
-            background: var(--gray-50);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
+            background-color: #e2e2e2;
         }
-
-        .faq-question.active {
-            border-color: var(--primary-color);
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            font-weight: 400;
-            transition: transform var(--transition-fast);
-        }
-
-        .faq-question.active::after {
-            transform: rotate(45deg);
-        }
-
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height var(--transition-normal);
-            background: var(--gray-50);
-            border: 2px solid var(--gray-200);
-            border-top: none;
-            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
         }
-
-        .faq-answer.active {
-            max-height: 200px;
-            padding: var(--spacing-lg);
-        }
-
-        .faq-answer p {
-            margin: 0;
-            color: var(--gray-700);
-            line-height: 1.7;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .faq-question {
-                padding: var(--spacing-md);
-                font-size: 0.95rem;
-            }
-            
-            .faq-answer.active {
-                padding: var(--spacing-md);
-            }
+        .no-margin {
+            margin: 0 !important;
+            padding: 0 !important;
         }
     </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100 no-margin">
     <div id="header"></div>
 
-    <main class="flex-grow-1">
-        <div class="container my-5">
-            <div class="faq-container fade-in">
-                <h1 class="faq-header">Frequently Asked Questions</h1>
-                
-                <div class="faq-item slide-up">
-                    <div class="faq-question">What is a Tonkinese cat?</div>
-                    <div class="faq-answer">
-                        <p>Tonkinese cats are a medium-sized breed with a muscular build and a silky coat. They are known for their affectionate and social nature.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item slide-up">
-                    <div class="faq-question">How do I adopt a Tonkinese kitten?</div>
-                    <div class="faq-answer">
-                        <p>You can adopt a Tonkinese kitten by contacting our cattery through the contact form on our website. We will guide you through the adoption process.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item slide-up">
-                    <div class="faq-question">What is the temperament of a Tonkinese cat?</div>
-                    <div class="faq-answer">
-                        <p>Tonkinese cats are known for their friendly and playful nature. They enjoy interacting with their human companions and are often described as being dog-like in their loyalty and affection.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item slide-up">
-                    <div class="faq-question">How do I care for a Tonkinese kitten?</div>
-                    <div class="faq-answer">
-                        <p>Caring for a Tonkinese kitten involves regular feeding with high-quality cat food, ensuring they have plenty of playtime and social interaction, and regular veterinary check-ups to keep them healthy.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item slide-up">
-                    <div class="faq-question">When will the kittens be ready to go home after they are born?</div>
-                    <div class="faq-answer">
-                        <p>We keep the kittens until they are 12 weeks old, then they can go to their new homes.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item slide-up">
-                    <div class="faq-question">What is the cost of a Tonkinese kitten?</div>
-                    <div class="faq-answer">
-                        <p>To be fair for everyone, we collect a non-refundable $300 deposit to add you to the waitlist of a litter. The date we receive your reservation fee will determine your place on our reservation list. For instance, first fee gets first pick, second fee received gets second pick, regardless of male or female preference. The price is determined by confirmation and temperament of the kitten.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item slide-up">
-                    <div class="faq-question">What certifications and credentials does your cattery have?</div>
-                    <div class="faq-answer">
-                        <p>Our cattery is fully registered with The International Cat Association (TICA) and The World Cat Federation (WCF). We have over 15 years of breeding experience and maintain the highest standards for health and temperament. <a href="certificates.html">View our official certificates and credentials here</a> to see our full range of certifications and awards.</p>
-                    </div>
-                </div>
+    <div class="container my-5">
+        <h1 class="faq-header">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="faq-question">What is a Tonkinese cat?</div>
+            <div class="faq-answer">
+                <p>Tonkinese cats are a medium-sized breed with a muscular build and a silky coat. They are known for their affectionate and social nature.</p>
             </div>
         </div>
-    </main>
+        <div class="faq-item">
+            <div class="faq-question">How do I adopt a Tonkinese kitten?</div>
+            <div class="faq-answer">
+                <p>You can adopt a Tonkinese kitten by contacting our cattery through the contact form on our website. We will guide you through the adoption process.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What is the temperament of a Tonkinese cat?</div>
+            <div class="faq-answer">
+                <p>Tonkinese cats are known for their friendly and playful nature. They enjoy interacting with their human companions and are often described as being dog-like in their loyalty and affection.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How do I care for a Tonkinese kitten?</div>
+            <div class="faq-answer">
+                <p>Caring for a Tonkinese kitten involves regular feeding with high-quality cat food, ensuring they have plenty of playtime and social interaction, and regular veterinary check-ups to keep them healthy.</p>
+            </div>
+        </div>
+    </div>
 
     <div id="footer"></div>
 
-    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
         document.addEventListener("DOMContentLoaded", function() {
             const questions = document.querySelectorAll('.faq-question');
             questions.forEach(question => {
                 question.addEventListener('click', function() {
                     const answer = this.nextElementSibling;
-                    const isActive = this.classList.contains('active');
-                    
-                    // Close all other questions
-                    questions.forEach(q => {
-                        q.classList.remove('active');
-                        q.nextElementSibling.classList.remove('active');
-                    });
-                    
-                    // Toggle current question
-                    if (!isActive) {
-                        this.classList.add('active');
-                        answer.classList.add('active');
-                    }
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
                 });
             });
         });

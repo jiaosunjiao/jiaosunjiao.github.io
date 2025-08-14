@@ -10,10 +10,10 @@
     <style>
         .contact-header {
             text-align: center;
-            margin-bottom: var(--spacing-3xl);
-            color: var(--primary-color);
+            margin-bottom: 3rem;
+            color: #333333;
             position: relative;
-            padding-bottom: var(--spacing-lg);
+            padding-bottom: 1rem;
         }
 
         .contact-header::after {
@@ -24,7 +24,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(90deg, #ff6b6b, #ffa500);
             border-radius: 2px;
         }
 
@@ -34,45 +34,49 @@
         }
 
         .contact-form {
-            background: var(--white);
-            padding: var(--spacing-2xl);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--gray-200);
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
         }
 
         .form-label {
             font-weight: 600;
-            color: var(--gray-700);
-            margin-bottom: var(--spacing-sm);
+            color: #374151;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         .form-control {
-            border: 2px solid var(--gray-200);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            padding: 12px 16px;
             font-size: 1rem;
-            transition: all var(--transition-fast);
-            background: var(--white);
+            transition: all 0.2s ease;
+            background: #ffffff;
+            color: #1f2937;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-            background: var(--white);
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+            background: #ffffff;
         }
 
         .form-control:valid {
-            border-color: var(--success-color);
+            border-color: #10b981;
         }
 
         .form-control:invalid:not(:placeholder-shown) {
-            border-color: var(--error-color);
+            border-color: #ef4444;
         }
 
         .form-control.is-valid {
-            border-color: var(--success-color);
+            border-color: #10b981;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right calc(0.375em + 0.1875rem) center;
@@ -80,7 +84,7 @@
         }
 
         .form-control.is-invalid {
-            border-color: var(--error-color);
+            border-color: #ef4444;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
             background-repeat: no-repeat;
             background-position: right calc(0.375em + 0.1875rem) center;
@@ -92,7 +96,7 @@
             width: 100%;
             margin-top: 0.25rem;
             font-size: 0.875em;
-            color: var(--success-color);
+            color: #10b981;
         }
 
         .invalid-feedback {
@@ -100,7 +104,7 @@
             width: 100%;
             margin-top: 0.25rem;
             font-size: 0.875em;
-            color: var(--error-color);
+            color: #ef4444;
         }
 
         .form-control.is-valid ~ .valid-feedback {
@@ -115,41 +119,42 @@
             background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
             border: 1px solid #c3e6cb;
             color: #155724;
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-lg);
-            margin-top: var(--spacing-lg);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1rem;
         }
 
         .alert-success h5 {
             color: #155724;
-            margin-bottom: var(--spacing-md);
+            margin-bottom: 0.75rem;
         }
 
         .alert-success ul {
             margin-bottom: 0;
-            padding-left: var(--spacing-lg);
+            padding-left: 1rem;
         }
 
         .alert-success li {
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: 0.5rem;
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: var(--white);
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: #ffffff;
             border: none;
-            padding: var(--spacing-md) var(--spacing-xl);
-            border-radius: var(--radius-md);
+            padding: 12px 24px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 1rem;
-            transition: all var(--transition-fast);
+            transition: all 0.2s ease;
             width: 100%;
+            cursor: pointer;
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #ffa500, #ff6b6b);
         }
 
         .btn-submit:active {
@@ -157,30 +162,49 @@
         }
 
         .contact-info {
-            background: var(--gray-50);
-            padding: var(--spacing-xl);
-            border-radius: var(--radius-lg);
-            margin-bottom: var(--spacing-xl);
-            border: 1px solid var(--gray-200);
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e5e7eb;
         }
 
         .contact-info h4 {
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-md);
+            color: #333333;
+            margin-bottom: 0.75rem;
         }
 
         .contact-info p {
-            color: var(--gray-600);
-            margin-bottom: var(--spacing-sm);
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-check {
+            margin-bottom: 0.5rem;
+        }
+
+        .form-check-input {
+            margin-right: 0.5rem;
+        }
+
+        .form-check-label {
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .form-text {
+            color: #6b7280;
+            font-size: 0.875em;
+            margin-top: 0.25rem;
         }
 
         @media (max-width: 768px) {
             .contact-form {
-                padding: var(--spacing-lg);
+                padding: 1rem;
             }
             
             .contact-info {
-                padding: var(--spacing-lg);
+                padding: 1rem;
             }
         }
     </style>
@@ -229,9 +253,9 @@
                         
                         <div class="mb-4">
                             <label for="dob" class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" id="dob" name="dob" required>
-                            <small class="form-text text-muted">Please select your date of birth (MM/DD/YYYY)</small>
-                            <div class="invalid-feedback">Please select your date of birth.</div>
+                            <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY (e.g., 01/15/1990)" required>
+                            <small class="form-text text-muted">Please enter your date of birth in MM/DD/YYYY format</small>
+                            <div class="invalid-feedback">Please enter your date of birth in MM/DD/YYYY format.</div>
                         </div>
                         
                         <div class="mb-4">
@@ -545,22 +569,41 @@
                 });
             }
             
-            // Set up date of birth field with reasonable limits
+            // Set up date of birth field validation
             const dobInput = document.getElementById('dob');
             if (dobInput) {
-                // Set maximum date to today (user can't be born in the future)
-                const today = new Date();
-                const maxDate = today.toISOString().split('T')[0];
-                dobInput.setAttribute('max', maxDate);
-                
-                // Set minimum date to 100 years ago (reasonable age limit)
-                const minDate = new Date();
-                minDate.setFullYear(today.getFullYear() - 100);
-                dobInput.setAttribute('min', minDate.toISOString().split('T')[0]);
-                
-                // Add validation for minimum age (18 years old)
-                dobInput.addEventListener('change', function() {
-                    const selectedDate = new Date(this.value);
+                // Add validation for date format and minimum age (18 years old)
+                dobInput.addEventListener('blur', function() {
+                    const dateValue = this.value.trim();
+                    
+                    // Check if date format is correct (MM/DD/YYYY)
+                    const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/\d{4}$/;
+                    
+                    if (!dateRegex.test(dateValue)) {
+                        this.classList.add('is-invalid');
+                        this.classList.remove('is-valid');
+                        this.setCustomValidity('Please enter date in MM/DD/YYYY format (e.g., 01/15/1990)');
+                        return;
+                    }
+                    
+                    // Parse the date and check if it's valid
+                    const parts = dateValue.split('/');
+                    const month = parseInt(parts[0]) - 1; // Month is 0-indexed
+                    const day = parseInt(parts[1]);
+                    const year = parseInt(parts[2]);
+                    
+                    const selectedDate = new Date(year, month, day);
+                    const today = new Date();
+                    
+                    // Check if the date is valid and not in the future
+                    if (selectedDate > today || selectedDate.getMonth() !== month || selectedDate.getDate() !== day) {
+                        this.classList.add('is-invalid');
+                        this.classList.remove('is-valid');
+                        this.setCustomValidity('Please enter a valid date that is not in the future');
+                        return;
+                    }
+                    
+                    // Check minimum age (18 years old)
                     const age = today.getFullYear() - selectedDate.getFullYear();
                     const monthDiff = today.getMonth() - selectedDate.getMonth();
                     
@@ -656,6 +699,7 @@
                     if (this.value === 'Other') {
                         otherSourceDiv.style.display = 'block';
                         otherSourceInput.required = true;
+                        otherSourceInput.focus();
                     } else {
                         otherSourceDiv.style.display = 'none';
                         otherSourceInput.required = false;
