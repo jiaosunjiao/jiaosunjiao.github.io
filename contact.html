@@ -522,84 +522,53 @@
                 successDiv.scrollIntoView({ behavior: 'smooth' });
                 
                                     // Send SMS notifications via webhook
-                    sendSMSNotifications();
+                    // SMS notifications removed
             }
             
-            // Function to send SMS notifications via webhook
-            function sendSMSNotifications() {
-                const formData = new FormData(form);
-                const data = {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    dob: formData.get('dob'),
-                    address: formData.get('address'),
-                    occupation: formData.get('occupation'),
-                    household_agreement: formData.get('household_agreement'),
-                    allergies: formData.get('allergies'),
-                    cat_experience: formData.get('cat_experience'),
-                    current_pets: formData.get('current_pets'),
-                    relocation_plan: formData.get('relocation_plan'),
-                    message: formData.get('message'),
-                    timestamp: new Date().toISOString()
-                };
-                
-                // Option 1: Use a free webhook service like webhook.site for testing
-                // const webhookUrl = 'https://hooks.zapier.com/hooks/catch/23989161/uuxxk86/';
-                
-                // Option 2: Use Zapier webhook (more reliable)
-                const webhookUrl = 'https://hooks.zapier.com/hooks/catch/23989161/uuxxk86/';
-                
-                fetch(webhookUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => {
-                    if (response.ok) {
-                        console.log('SMS notification webhook sent successfully');
-                    } else {
-                        console.error('SMS webhook failed:', response.status);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error sending SMS notification:', error);
-                });
-            }
+
             
-            // Set up date of birth field validation
+            // Set up date of birth field validation (only age check, no format validation)
             const dobInput = document.getElementById('dob');
             if (dobInput) {
-                // Add validation for date format and minimum age (18 years old)
+                // Only check minimum age (18 years old), no format validation
                 dobInput.addEventListener('blur', function() {
                     const dateValue = this.value.trim();
                     
-                    // Check if date format is correct (MM/DD/YYYY)
-                    const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/\d{4}$/;
-                    
-                    if (!dateRegex.test(dateValue)) {
-                        this.classList.add('is-invalid');
-                        this.classList.remove('is-valid');
-                        this.setCustomValidity('Please enter date in MM/DD/YYYY format (e.g., 01/15/1990)');
+                    if (dateValue === '') {
+                        this.classList.remove('is-valid', 'is-invalid');
                         return;
                     }
                     
-                    // Parse the date and check if it's valid
-                    const parts = dateValue.split('/');
-                    const month = parseInt(parts[0]) - 1; // Month is 0-indexed
-                    const day = parseInt(parts[1]);
-                    const year = parseInt(parts[2]);
+                    // Try to parse the date - be flexible with format
+                    let selectedDate = new Date(dateValue);
                     
-                    const selectedDate = new Date(year, month, day);
+                    // If the first parse fails, try common formats
+                    if (isNaN(selectedDate.getTime())) {
+                        // Try MM/DD/YYYY format
+                        const parts = dateValue.split('/');
+                        if (parts.length === 3) {
+                            const month = parseInt(parts[0]) - 1;
+                            const day = parseInt(parts[1]);
+                            const year = parseInt(parts[2]);
+                            selectedDate = new Date(year, month, day);
+                        }
+                    }
+                    
+                    // If still invalid, just mark as valid (no format enforcement)
+                    if (isNaN(selectedDate.getTime())) {
+                        this.classList.add('is-valid');
+                        this.classList.remove('is-invalid');
+                        this.setCustomValidity('');
+                        return;
+                    }
+                    
                     const today = new Date();
                     
-                    // Check if the date is valid and not in the future
-                    if (selectedDate > today || selectedDate.getMonth() !== month || selectedDate.getDate() !== day) {
+                    // Check if the date is not in the future
+                    if (selectedDate > today) {
                         this.classList.add('is-invalid');
                         this.classList.remove('is-valid');
-                        this.setCustomValidity('Please enter a valid date that is not in the future');
+                        this.setCustomValidity('Please enter a date that is not in the future');
                         return;
                     }
                     
